@@ -1,56 +1,56 @@
+# MenuPro – Cardápio Online Fullstack
 
-# Card-pio
+[![Last Commit](https://img.shields.io/github/last-commit/leorecoa/Card-pio-?style=flat-square)](https://github.com/leorecoa/Card-pio-/commits/main)
+[![Repo Size](https://img.shields.io/github/repo-size/leorecoa/Card-pio-?style=flat-square)](https://github.com/leorecoa/Card-pio-)
+[![Top Language](https://img.shields.io/github/languages/top/leorecoa/Card-pio-?style=flat-square)](https://github.com/leorecoa/Card-pio-)
+[![License](https://img.shields.io/badge/license-not%20specified-lightgrey?style=flat-square)](https://github.com/leorecoa/Card-pio-)
 
-![GitHub language count](https://img.shields.io/github/languages/count/leorecoa/Card-pio-) 
-![GitHub repo size](https://img.shields.io/github/repo-size/leorecoa/Card-pio-) 
-![GitHub stars](https://img.shields.io/github/stars/leorecoa/Card-pio-?style=social) 
-![GitHub last commit](https://img.shields.io/github/last-commit/leorecoa/Card-pio-) 
+Aplicação fullstack em **TypeScript** para um sistema de **cardápio digital com carrinho e painel administrativo**.
 
-## 📋 Sobre
+O projeto demonstra domínio de frontend moderno com React + Vite e integração real com backend Express e banco SQLite.
 
-**Card-pio** é um projeto front-end que representa um cardápio digital interativo.  
-Ele está organizado com uma estrutura moderna de TypeScript e Vite, pronto para rodar localmente ou ser expandido com novas funcionalidades.
+---
 
-Este repositório contém tudo o que é necessário para iniciar rapidamente a aplicação e explorar conceitos de interface interativa com foco em web moderna.
+## Visão Geral
 
-## 🛠️ Tecnologias
+O sistema permite:
 
-- **TypeScript** — Tipagem estática e segurança de código  
-- **Vite** — Build tool rápida e moderna  
-- **Tailwind CSS** *(se estiver presente no projeto)* — Estilização utilitária responsiva  
+- Listagem de categorias e produtos
+- Adição de produtos ao carrinho
+- Cálculo automático de total
+- Finalização de pedido
+- Login administrativo
+- Visualização de pedidos no painel admin
 
-## 🚀 Começando
+O backend cria automaticamente as tabelas e realiza seed inicial caso o banco esteja vazio.
 
-### Pré-requisitos
+---
 
-- Node.js instalado
+## Stack Tecnológica
 
-### Instalação
+### Frontend
+- React 19
+- Vite
+- TypeScript
+- React Router
+- Zustand (estado global + persistência)
+- Tailwind CSS
+- motion (animações)
+- lucide-react (ícones)
 
-```bash
-npm install
-````
+### Backend
+- Node.js
+- Express
+- better-sqlite3
+- bcryptjs
+- jsonwebtoken (JWT)
 
-### Executar
+### Testes
+- Vitest
+- Testing Library
 
-```bash
-npm run dev
-```
+---
 
-O servidor de desenvolvimento iniciará e você poderá acessar a aplicação no seu navegador.
+## Arquitetura
 
-## 📁 Estrutura
-
-* `/src` — Código fonte da aplicação
-* `.env.example` — Exemplo de variáveis de ambiente
-* `index.html` — Ponto de entrada da interface
-* Configs de build e tipos (`tsconfig.json`, `vite.config.ts`)
-
-## 🙌 Contribuição
-
-Contribuições são bem-vindas!
-Se você identificar melhorias ou quiser adicionar novos recursos, abra uma *issue* ou envie um *pull request*.
-
-## 📄 Licença
-
-Este projeto está licenciado sob os termos presentes no repositório.
+### Estrutura simplificada
