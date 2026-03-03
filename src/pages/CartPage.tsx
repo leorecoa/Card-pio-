@@ -48,25 +48,46 @@ export function CartPage() {
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="bg-zinc-900/30 border border-white/5 rounded-[48px] p-20 max-w-2xl mx-auto"
+          className="bg-zinc-900/20 border border-white/5 rounded-[64px] p-12 sm:p-24 max-w-3xl mx-auto relative overflow-hidden"
         >
-          <div className="w-24 h-24 bg-zinc-950 rounded-full flex items-center justify-center mx-auto mb-10 border border-white/5">
-            <ShoppingBag className="h-10 w-10 text-zinc-700" />
+          {/* Decorative Glow */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-emerald-500/5 blur-[100px] pointer-events-none" />
+          
+          <div className="relative z-10">
+            <div className="w-32 h-32 bg-zinc-950 rounded-[40px] flex items-center justify-center mx-auto mb-12 border border-white/10 shadow-2xl">
+              <ShoppingBag className="h-12 w-12 text-zinc-800" />
+            </div>
+            <h2 className="text-5xl sm:text-7xl font-black text-white mb-6 tracking-tighter leading-none">
+              Seu carrinho <br /><span className="text-emerald-500">está vazio.</span>
+            </h2>
+            <p className="text-zinc-500 text-xl mb-16 font-medium max-w-md mx-auto leading-relaxed">
+              Parece que você ainda não escolheu sua próxima experiência gastronômica.
+            </p>
+            <Link to="/" className="group inline-flex items-center justify-center bg-emerald-500 text-black px-16 py-6 rounded-[24px] font-black text-lg uppercase tracking-widest transition-all hover:scale-105 shadow-[0_20px_50px_rgba(16,185,129,0.3)]">
+              <span>EXPLORAR CARDÁPIO</span>
+              <ArrowRight className="ml-4 h-6 w-6 group-hover:translate-x-2 transition-transform" />
+            </Link>
           </div>
-          <h2 className="text-4xl font-black text-white mb-4 tracking-tighter">Seu carrinho está vazio</h2>
-          <p className="text-zinc-500 text-lg mb-12 font-medium">Que tal explorar nosso cardápio e escolher algo delicioso?</p>
-          <Link to="/" className="inline-flex items-center justify-center bg-emerald-500 text-black px-12 py-5 rounded-2xl font-black text-sm uppercase tracking-widest transition-all hover:scale-105 shadow-[0_20px_40px_rgba(16,185,129,0.2)]">
-            Ver Cardápio
-          </Link>
         </motion.div>
       </div>
     );
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-      <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10 mb-20">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+      <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12 mb-24">
         <div>
+          <motion.button
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
+            onClick={() => navigate('/')}
+            className="flex items-center space-x-3 text-zinc-500 hover:text-white mb-10 transition-colors group"
+          >
+            <div className="w-8 h-8 rounded-full border border-white/5 flex items-center justify-center group-hover:border-white/20">
+              <ShoppingBag size={14} className="group-hover:scale-110 transition-transform" />
+            </div>
+            <span className="text-[10px] font-black uppercase tracking-widest">Voltar ao Cardápio</span>
+          </motion.button>
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -87,7 +108,7 @@ export function CartPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="text-zinc-500 text-xl font-medium max-w-xs lg:text-right"
+          className="text-zinc-500 text-xl font-medium max-w-xs lg:text-right leading-relaxed"
         >
           Revise seus itens e finalize sua experiência gastronômica.
         </motion.p>
@@ -214,6 +235,23 @@ export function CartPage() {
               </p>
             </div>
           </motion.div>
+        </div>
+      </div>
+
+      {/* Recommended Section */}
+      <div className="mt-48">
+        <div className="flex items-center space-x-4 mb-16">
+          <div className="h-px w-12 bg-emerald-500" />
+          <span className="text-emerald-500 font-black text-xs uppercase tracking-[0.4em]">Você também pode gostar</span>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 opacity-40 hover:opacity-100 transition-opacity duration-700">
+          {[...Array(4)].map((_, i) => (
+            <div key={i} className="bg-zinc-900/20 border border-white/5 rounded-[32px] p-6 animate-pulse">
+              <div className="aspect-square bg-zinc-800 rounded-2xl mb-4" />
+              <div className="h-4 bg-zinc-800 rounded w-2/3 mb-2" />
+              <div className="h-4 bg-zinc-800 rounded w-1/3" />
+            </div>
+          ))}
         </div>
       </div>
     </div>

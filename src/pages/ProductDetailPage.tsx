@@ -196,6 +196,30 @@ export function ProductDetailPage() {
             </motion.div>
           </motion.div>
         </div>
+
+        {/* Related Products Section */}
+        <div className="mt-48">
+          <div className="flex items-center space-x-4 mb-16">
+            <div className="h-px w-12 bg-emerald-500" />
+            <span className="text-emerald-500 font-black text-xs uppercase tracking-[0.4em]">Combina com este prato</span>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[...Array(4)].map((_, i) => (
+              <div key={i} className="bg-zinc-900/20 border border-white/5 rounded-[40px] p-6 group cursor-pointer hover:border-emerald-500/30 transition-all">
+                <div className="aspect-square rounded-3xl overflow-hidden mb-6">
+                  <img 
+                    src={`https://picsum.photos/seed/related-${i}/400/400`} 
+                    alt="Related" 
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+                <h4 className="text-white font-black tracking-tight mb-2">Acompanhamento Especial</h4>
+                <p className="text-emerald-500 font-black">R$ 19,90</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );

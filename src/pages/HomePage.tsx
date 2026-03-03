@@ -48,6 +48,21 @@ export function HomePage() {
       {/* Immersive Hero Section */}
       <PromotionHero products={products} />
 
+      {/* Brutalist Marquee */}
+      <div className="bg-emerald-500 py-4 overflow-hidden select-none border-y border-black/10">
+        <motion.div 
+          animate={{ x: [0, -1000] }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          className="flex whitespace-nowrap"
+        >
+          {[...Array(10)].map((_, i) => (
+            <span key={i} className="text-black font-black text-xs uppercase tracking-[0.5em] mx-10">
+              Fresh Ingredients • Hand Crafted • Premium Quality • Fresh Ingredients • Hand Crafted • Premium Quality
+            </span>
+          ))}
+        </motion.div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12 mb-32">
           <div className="max-w-2xl">
@@ -97,6 +112,65 @@ export function HomePage() {
               />
             </div>
           </motion.div>
+        </div>
+
+        {/* Chef's Special Section */}
+        <div className="mb-48">
+          <div className="flex items-center space-x-4 mb-12">
+            <div className="h-px w-12 bg-emerald-500" />
+            <span className="text-emerald-500 font-black text-xs uppercase tracking-[0.4em]">Chef's Choice</span>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative aspect-[16/9] rounded-[48px] overflow-hidden group border border-white/5"
+            >
+              <img 
+                src="https://picsum.photos/seed/chef/1200/800" 
+                alt="Chef Special" 
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              <div className="absolute bottom-10 left-10 right-10">
+                <h3 className="text-4xl font-black text-white mb-2 tracking-tighter">O Segredo do Chef</h3>
+                <p className="text-zinc-300 font-medium max-w-md">Descubra os ingredientes secretos que tornam nossos pratos únicos.</p>
+              </div>
+            </motion.div>
+            <div className="flex flex-col justify-center space-y-10">
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="flex items-start space-x-6"
+              >
+                <div className="w-16 h-16 rounded-3xl bg-zinc-900 border border-white/5 flex items-center justify-center text-emerald-500 flex-shrink-0">
+                  <span className="text-2xl font-black">01</span>
+                </div>
+                <div>
+                  <h4 className="text-xl font-black text-white mb-2 tracking-tight">Ingredientes Locais</h4>
+                  <p className="text-zinc-500 font-medium">Trabalhamos apenas com produtores locais para garantir o frescor máximo.</p>
+                </div>
+              </motion.div>
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="flex items-start space-x-6"
+              >
+                <div className="w-16 h-16 rounded-3xl bg-zinc-900 border border-white/5 flex items-center justify-center text-emerald-500 flex-shrink-0">
+                  <span className="text-2xl font-black">02</span>
+                </div>
+                <div>
+                  <h4 className="text-xl font-black text-white mb-2 tracking-tight">Técnicas Ancestrais</h4>
+                  <p className="text-zinc-500 font-medium">Combinamos modernidade com métodos tradicionais de preparo.</p>
+                </div>
+              </motion.div>
+            </div>
+          </div>
         </div>
 
         {/* Categories Filter - Crafted Style */}
