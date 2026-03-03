@@ -1,20 +1,56 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
 
-# Run and deploy your AI Studio app
+# Card-pio
 
-This contains everything you need to run your app locally.
+![GitHub language count](https://img.shields.io/github/languages/count/leorecoa/Card-pio-) 
+![GitHub repo size](https://img.shields.io/github/repo-size/leorecoa/Card-pio-) 
+![GitHub stars](https://img.shields.io/github/stars/leorecoa/Card-pio-?style=social) 
+![GitHub last commit](https://img.shields.io/github/last-commit/leorecoa/Card-pio-) 
 
-View your app in AI Studio: https://ai.studio/apps/e76f4979-87c9-4c00-b559-218464b7c709
+## 📋 Sobre
 
-## Run Locally
+**Card-pio** é um projeto front-end que representa um cardápio digital interativo.  
+Ele está organizado com uma estrutura moderna de TypeScript e Vite, pronto para rodar localmente ou ser expandido com novas funcionalidades.
 
-**Prerequisites:**  Node.js
+Este repositório contém tudo o que é necessário para iniciar rapidamente a aplicação e explorar conceitos de interface interativa com foco em web moderna.
 
+## 🛠️ Tecnologias
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+- **TypeScript** — Tipagem estática e segurança de código  
+- **Vite** — Build tool rápida e moderna  
+- **Tailwind CSS** *(se estiver presente no projeto)* — Estilização utilitária responsiva  
+
+## 🚀 Começando
+
+### Pré-requisitos
+
+- Node.js instalado
+
+### Instalação
+
+```bash
+npm install
+````
+
+### Executar
+
+```bash
+npm run dev
+```
+
+O servidor de desenvolvimento iniciará e você poderá acessar a aplicação no seu navegador.
+
+## 📁 Estrutura
+
+* `/src` — Código fonte da aplicação
+* `.env.example` — Exemplo de variáveis de ambiente
+* `index.html` — Ponto de entrada da interface
+* Configs de build e tipos (`tsconfig.json`, `vite.config.ts`)
+
+## 🙌 Contribuição
+
+Contribuições são bem-vindas!
+Se você identificar melhorias ou quiser adicionar novos recursos, abra uma *issue* ou envie um *pull request*.
+
+## 📄 Licença
+
+Este projeto está licenciado sob os termos presentes no repositório.
